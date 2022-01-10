@@ -10,6 +10,8 @@ RUN go build -o /go/bin/greet ./cmd/greet/
 FROM docker.io/alpine:3.14
 COPY  --from=builder /go/bin/greet .
 
-RUN mkdir test && touch test/test.sh && chmod +rwx test/test.sh
+RUN chown 65534:65534 greet
+
+USER 65534
 
 ENTRYPOINT [ "./greet" ]
