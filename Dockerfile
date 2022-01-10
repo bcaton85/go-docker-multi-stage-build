@@ -8,7 +8,6 @@ COPY . .
 RUN go build -o /go/bin/greet ./cmd/greet/
 
 FROM docker.io/alpine:3.14
-COPY --chown=65534:65534 --from=builder /go/bin/greet .
-USER 65534
+COPY  --from=builder /go/bin/greet .
 
 ENTRYPOINT [ "./greet" ]
