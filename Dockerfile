@@ -10,7 +10,7 @@ RUN go build -o /go/bin/greet ./cmd/greet/
 FROM docker.io/alpine:3.14
 COPY  --from=builder /go/bin/greet .
 
-RUN chown 65534:65534 greet
+RUN chown 65534:65534 /greet
 
 USER 65534
 
