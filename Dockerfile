@@ -1,2 +1,2 @@
-FROM docker.io/library/nginx
+FROM registry.access.redhat.com/ubi8/ubi:8
 RUN curl -v https://www.google.com
