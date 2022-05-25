@@ -1,2 +1,2 @@
-FROM registry.access.redhat.com/ubi9-beta/ubi
+FROM docker.io/library/busybox
 RUN echo success
