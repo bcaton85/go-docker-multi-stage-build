@@ -1,2 +1,2 @@
 FROM docker.io/library/busybox
-RUN echo success
+RUN exit 1
